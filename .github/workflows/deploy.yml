@@ -33,9 +33,9 @@ jobs:
             set -e
             cd /home/ubuntu/app/drf-test
             git pull origin master                      
-            
-            echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" > .env
-            echo "DEBUG=${{ secrets.DEBUG }}" >> .env    
+
+            echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> ./drf_test/.env
+            echo "DEBUG=${{ secrets.DEBUG }}" >> ./drf_test/.env
 
             source venv/bin/activate
             
