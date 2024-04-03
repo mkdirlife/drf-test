@@ -38,9 +38,11 @@ jobs:
             echo "DEBUG='${{ secrets.DEBUG }}'" > .env
 
             source venv/bin/activate
+            
+            pip install -r requirements.txt            
             cd /home/ubuntu/app/drf-test/drf_test
             
-            pip install -r requirements.txt
+
             
             pyhton3 manage.py collectstatic
             
