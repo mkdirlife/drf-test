@@ -32,7 +32,7 @@ jobs:
           script: |
             set -e
             cd /home/ubuntu/app/drf-test
-            git pull origin main                      
+            git pull origin master                      
             
             echo "SECRET_KEY=\"${{ secrets.SECRET_KEY }}\"" > .env
             echo "DEBUG='${{ secrets.DEBUG }}'" > .env
@@ -43,4 +43,4 @@ jobs:
             cd /home/ubuntu/app/drf-test/drf_test
                        
             python3 manage.py collectstatic
-            sudo systemctl restart site.service
+            sudo systemctl restart site
