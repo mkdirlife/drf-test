@@ -33,10 +33,12 @@ jobs:
             set -e
             cd /home/ubuntu/app/drf-test
             git pull origin master
-            
+
+            cd /home/ubuntu/app/drf-test/drf_test
             echo "SECRET_KEY=\"${{ secrets.SECRET_KEY }}\"" > .env
             echo "DEBUG='${{ secrets.DEBUG }}'" >> .env
-            
+
+            cd /home/ubuntu/app/drf-test
             source venv/bin/activate
 
             pip install -r requirements.txt
